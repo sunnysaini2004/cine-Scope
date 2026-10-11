@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import "tailwindcss";
+
+/* CineScope theme tokens — Tailwind CSS v4 */
+@theme {
+  --color-primary: #1d1f28;
+  --color-light-100: #f4f0e9;
+  --color-light-200: #ded2c4;
+  --color-gray-100: #b1b5b9;
+  --color-dark-100: #252b34;
+  --color-dark-200: #151820;
+  --color-slate-cine: #515a62;
+  --color-teal-cine: #293239;
+
+  --font-dm-sans: "DM Sans", sans-serif;
+  --font-bebas-neue: "Bebas Neue", sans-serif;
+
+  --breakpoint-xs: 480px;
+}
+
+/* Global defaults only.
+   Component layouts and visual styling live in Tailwind classes. */
+@layer base {
+  html {
+    min-width: 320px;
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
+
+  body {
+    min-width: 320px;
+    min-height: 100vh;
+    margin: 0;
+    background: #1d1f28;
+    color: #f4f0e9;
+    font-family: "DM Sans", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  button,
+  input,
+  select,
+  textarea {
+    font: inherit;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  button:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible,
+  a:focus-visible {
+    outline: 2px solid #ded2c4;
+    outline-offset: 3px;
+  }
+
+  img {
+    max-width: 100%;
+  }
+}
+
+/* Respect users who prefer reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
