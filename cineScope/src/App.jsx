@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useDebounce } from "react-use";
 
+import Footer from "./components/Footer";
 import MovieCard from "./components/MovieCard";
 import MovieDetails from "./components/MovieDetails";
 import Search from "./components/Search";
@@ -148,9 +149,7 @@ const App = () => {
   const fetchMovies = useCallback(async (query, signal) => {
     if (!API_KEY) {
       setMovieList([]);
-      setErrorMessage(
-        "TMDB API token is missing. Check your .env.local file.",
-      );
+      setErrorMessage("TMDB API token is missing. Check your .env.local file.");
       setIsLoading(false);
       return;
     }
@@ -289,7 +288,7 @@ const App = () => {
           {/* Dedicated Spider-Man image banner */}
           <div className="flex h-[320px] w-full items-center justify-center overflow-hidden rounded-2xl border border-[#DED2C4]/15 bg-[#252B34] shadow-[0_22px_60px_rgba(0,0,0,0.3)] sm:h-[320px] sm:rounded-3xl lg:h-[440px]">
             <img
-              src="/hero.jpg"
+              src="/spidermen.jpeg"
               alt="Spider-Man cinematic scene"
               className="h-full w-full object-cover"
             />
@@ -315,8 +314,8 @@ const App = () => {
 
           {/* Description */}
           <p className="mt-4 max-w-2xl text-sm leading-6 text-[#C0C5C9] sm:mt-5 sm:text-base md:text-lg md:leading-7">
-            Find your next favorite story, explore unforgettable films, and
-            keep your watchlist in one place.
+            Find your next favorite story, explore unforgettable films, and keep
+            your watchlist in one place.
           </p>
 
           {/* Hero CTA */}
@@ -330,10 +329,7 @@ const App = () => {
 
           {/* Existing search component */}
           <div className="mt-7 w-full max-w-3xl sm:mt-8">
-            <Search
-              searchTerm={searchTerm}
-              setSearchTerm={setSearchTerm}
-            />
+            <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
           </div>
         </header>
 
@@ -464,6 +460,8 @@ const App = () => {
           errorMessage={detailsError}
         />
       )}
+      {/*  Footer  */}
+      <Footer />
     </main>
   );
 };
