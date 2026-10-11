@@ -1,100 +1,146 @@
-# React + Vite
+# 🎬 CineScope — Discover Movies You Love
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+CineScope is a cinematic movie-discovery web app built with React. Explore popular movies, search for films, view detailed movie information, and save titles to your personal watchlist.
 
-Currently, two official plugins are available:
+<p align="center">
+  <a href="https://cine-scope-jet.vercel.app/">🌐 Live Demo</a> ·
+  <a href="https://github.com/sunnysaini2004/cine-Scope">💻 GitHub Repository</a>
+</p>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## React Compiler
+- **Discover popular movies** using data from The Movie Database (TMDB).
+- **Search movies** with a debounced search input to reduce unnecessary requests.
+- **Movie details** including available cast, crew, videos, and images.
+- **Personal watchlist** to save and remove movies.
+- **Persistent watchlist** stored in the browser with `localStorage`.
+- **Sort movie results** by popularity, title, rating, or release date.
+- **Loading and error states** for a clearer user experience.
+- **Responsive layout** designed for different screen sizes.
+- **Cinematic UI** with a charcoal, slate, and ivory color palette.
+- **Live deployment** on Vercel, connected to the GitHub repository for automatic deployments.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🔗 Project Links
 
-## Expanding the ESLint configuration
+- **Live website:** https://cine-scope-jet.vercel.app/
+- **GitHub repository:** https://github.com/sunnysaini2004/cine-Scope
+- **Movie data API:** [The Movie Database (TMDB)](https://www.themoviedb.org/)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🧰 Tech Stack
 
----
+- [React](https://react.dev/) — UI components and application state
+- [Vite](https://vite.dev/) — development server and production build
+- [Tailwind CSS v4](https://tailwindcss.com/) — styling and responsive design
+- [TMDB API](https://developer.themoviedb.org/) — movie data and details
+- [react-use](https://github.com/streamich/react-use) — debounced search utility
+- Browser `localStorage` — watchlist persistence
+- [Vercel](https://vercel.com/) — deployment and hosting
 
-# Movie Search React App
+## 🚀 Run Locally
 
-A modern movie search application built with **React** and **Vite**. This project demonstrates my skills in React, API integration, state management, component design, and responsive UI using Tailwind CSS.
+### Prerequisites
 
-## Features
+- [Node.js](https://nodejs.org/) (a current LTS version is recommended)
+- npm
+- A TMDB API access token
 
-- 🔍 **Search Movies:** Search for movies using the TMDB API with debounced input for performance.
-- 🎬 **Popular Movies:** Displays a list of trending/popular movies by default.
-- ⚡ **Fast & Modern Stack:** Built with React 19, Vite, and Tailwind CSS for rapid development and a great developer experience.
-- 🧩 **Reusable Components:** Modular components for search, movie cards, and loading spinners.
-- 📱 **Responsive Design:** Fully responsive layout for mobile and desktop.
-- 🌙 **Dark Theme:** Uses a dark color palette for a modern look.
-- 🛠️ **ESLint & Best Practices:** Linting and code quality enforced with ESLint and recommended React rules.
+### 1. Clone the repository
 
-## Tech Stack
+```bash
+git clone https://github.com/sunnysaini2004/cine-Scope.git
+cd cine-Scope
+```
 
-- [React](https://react.dev/)
-- [Vite](https://vitejs.dev/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [TMDB API](https://www.themoviedb.org/documentation/api)
-- [ESLint](https://eslint.org/)
+### 2. Install dependencies
 
-## Getting Started
+```bash
+npm install
+```
 
-1. **Clone the repository:**
-   ```sh
-   git clone https://github.com/yourusername/movie-search-react-app.git
-   cd movie-search-react-app
-   ```
+### 3. Configure the TMDB environment variable
 
-2. **Install dependencies:**
-   ```sh
-   npm install
-   ```
+Create a file named `.env.local` in the project root and add your TMDB **API Read Access Token**:
 
-3. **Set up environment variables:**
-   - Copy `.env.local.example` to `.env.local` and add your TMDB API key:
-     ```
-     VITE_TMDB_API_KEY=your_tmdb_api_key_here
-     ```
+```env
+VITE_TMDB_API_KEY=your_tmdb_api_read_access_token
+```
 
-4. **Run the development server:**
-   ```sh
-   npm run dev
-   ```
+Replace the placeholder with your own token. Do not commit `.env.local` or paste your real token into README files, screenshots, or public messages.
 
-5. **Build for production:**
-   ```sh
-   npm run build
-   ```
+> **Security note:** Vite exposes variables prefixed with `VITE_` in the client-side bundle. This setup is suitable for a client-side demo, but the token should not be treated as a private secret. For stronger protection in a production application, route TMDB requests through a backend or serverless function and keep credentials server-side. See the [Vite environment variables guide](https://vite.dev/guide/env-and-mode.html#env-variables).
 
-## Project Structure
+### 4. Start the development server
 
-- `src/components/` – Reusable React components (MovieCard, Search, Spinner)
-- `src/assets/` – Static assets
-- `src/App.jsx` – Main app logic
-- `src/main.jsx` – Entry point
-- `src/index.css` – Tailwind and global styles
+```bash
+npm run dev
+```
 
-## Example Bullet Points
+Open the local URL printed in your terminal (Vite commonly uses `http://localhost:5173`). If you change environment variables while the server is running, restart the development server.
 
-- This project demonstrates:
-  - API integration and data fetching in React
-  - Debounced search input for better UX
-  - Component-driven development and state management
-  - Styling with Tailwind CSS
-  - Fast development workflow with Vite
+### 5. Build for production
 
-## What I Learned
+```bash
+npm run build
+```
 
-- Efficient API data fetching and error handling in React
-- Debouncing user input for better UX
-- Component-driven development and state management
-- Styling with Tailwind CSS and custom utility classes
-- Using Vite for fast development and builds
+To run the project's lint checks:
 
-## Contact
+```bash
+npm run lint
+```
 
-If you’d like to discuss this project or opportunities, feel free to reach out via [LinkedIn](https://www.linkedin.com/in/tinesh-narendra-shah/) or email me at [tineshshah87@gmail.com](mailto:tineshshah87@gmail.com).
+## 📁 Project Structure
 
----
+```text
+cine-Scope/
+├── public/
+│   └── hero.jpg
+├── src/
+│   ├── components/
+│   │   ├── Footer.jsx
+│   │   ├── MovieCard.jsx
+│   │   ├── MovieDetails.jsx
+│   │   ├── Search.jsx
+│   │   └── Spinner.jsx
+│   ├── App.jsx
+│   ├── App.css
+│   ├── index.css
+│   └── main.jsx
+├── .env.local          # Local environment variable; do not commit
+├── .gitignore
+├── index.html
+├── package.json
+├── package-lock.json
+└── vite.config.js
+```
+
+The structure above reflects the current project layout; minor file names may differ if the project is updated.
+
+## 🎞️ How It Works
+
+1. CineScope requests popular movies from TMDB when the Discover view loads.
+2. Search terms are debounced before a movie search request is made.
+3. Selecting a movie loads its additional details.
+4. Add movies to your watchlist to keep them saved in your browser.
+5. Switch between **Discover Movies** and **My Watchlist**, then sort the displayed results.
+
+## 🌍 Deployment
+
+The project is deployed on Vercel and connected to the GitHub repository. Push changes to the connected production branch (typically `main`) to trigger a new deployment.
+
+Make sure `VITE_TMDB_API_KEY` is configured in the Vercel project's environment variables for the environments you deploy, then redeploy if you change that value.
+
+## 🙋 Author
+
+**Sunny Saini** — developer of CineScope.
+
+- GitHub: [@sunnysaini2004](https://github.com/sunnysaini2004)
+- Project repository: [cine-Scope](https://github.com/sunnysaini2004/cine-Scope)
+- Live project: [CineScope](https://cine-scope-jet.vercel.app/)
+
+## 🙌 Acknowledgements
+
+- [The Movie Database (TMDB)](https://www.themoviedb.org/) for movie data and images.
+- [React](https://react.dev/), [Vite](https://vite.dev/), and [Tailwind CSS](https://tailwindcss.com/) for the development tools and framework.
+
+Movie data is provided by TMDB. CineScope is an independent portfolio project and is not endorsed or certified by TMDB.
